@@ -1,3 +1,3 @@
-# Phyton
+# Python
 
-Phyton learning repository from freecodecamp courses
+Python learning repository from freecodecamp courses
