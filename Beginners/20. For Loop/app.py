@@ -1,6 +1,3 @@
-from tkinter import Y
-
-
 for letter in "Python For Loop":
     print(letter)
 
