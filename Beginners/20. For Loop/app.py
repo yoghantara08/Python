@@ -1,3 +1,6 @@
+from tkinter import Y
+
+
 for letter in "Python For Loop":
     print(letter)
 
@@ -21,3 +24,15 @@ for i in range(5):
         print("first Iteration")
     else:
         print("not first")
+
+#break = stop / out from the loop
+for x in range(5):
+    print(x)
+    if x == 3:
+        break
+
+#continue = stop at the statement and continue
+for y in ["A", "B", "C", "D", "E"]:
+    if y == "C":
+        continue
+    print(y)
