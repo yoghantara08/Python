@@ -1,3 +1,6 @@
+from turtle import pos
+
+
 class Node:
     """
     An object for storing a single node of a linked list
@@ -59,6 +62,33 @@ class Linked_List:
                 current = current.next_node
         return None
 
+    def insert(self, data, index):
+        """
+        Inserts a new Node containing data at index position
+        Insertion takes O(1) time but finding the node at
+        the insertion point takes O(n) time.
+
+        Takes overall O(n) time
+        """
+        if index == 0:
+            self.add(data)
+
+        if index > 0:
+            new = Node(data)
+
+            position = index
+            current = self.head
+
+            while position > 1:
+                current = current.next_node
+                position -= 1
+
+            prev = current
+            next_node = current.next_node
+
+            prev.next_node = new
+            new.next_node = next_node
+
     def __repr__(self):
         """
         Return a string representation of the list
@@ -91,8 +121,9 @@ l.add(10)
 l.add(6)
 l.add(3)
 
-n = l.search(6)
+# n = l.search(6)
+insert = l.insert(5,2)
 
 print(l.size())
 print(l)
-print(n)
+# print(n)
