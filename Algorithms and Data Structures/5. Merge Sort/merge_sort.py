@@ -29,3 +29,43 @@ def split(list):
 
     return left, right
     
+def merge(left, right):
+    """
+    Merges two lists (arrays), sorting them in the process
+    Returns a new merged list
+    """
+
+    l = []
+    i = 0
+    j = 0
+
+    while i < len(left) and j < (len(right)):
+        if left[i] < right[j]:
+            l.append(left[i])
+            i+=1
+        else:
+            l.append(right[j])
+            j+=1
+
+    while i < len(left):
+        l.append(left[i])
+        i+=1
+
+    while j < len(right):
+        l.append(right[j])
+        j+=1
+    
+    return l
+
+def verify_sorted(list):
+    n = len(list)
+
+    if n == 0 or n == 1:
+        return True
+    
+    return list[0] < list[1] and verify_sorted(list[1:])
+
+list = [20,63,73,23,61,82,12,31,56,25]
+l = merge_sort(list)
+print(verify_sorted(list))
+print(verify_sorted(l))
