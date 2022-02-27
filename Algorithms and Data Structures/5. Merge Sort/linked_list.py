@@ -1,3 +1,7 @@
+from locale import currency
+from turtle import position
+
+
 class Node:
     """
     An object for storing a single node of a linked list
@@ -109,6 +113,18 @@ class Linked_List:
 
         return current
 
+    def node_at_index(self, index):
+        if index == 0:
+            return self.head
+        else:
+            current = self.head
+            position = 0
+            
+            while position < index:
+                current = current.next_node
+                position += 1
+            return current
+
     def __repr__(self):
         """
         Return a string representation of the list
@@ -134,18 +150,18 @@ class Linked_List:
 
 # print(l.size())
 
-l = Linked_List()
-l.add(12)
-l.add(2)
-l.add(10)
-l.add(6)
-l.add(3)
+# l = Linked_List()
+# l.add(12)
+# l.add(2)
+# l.add(10)
+# l.add(6)
+# l.add(3)
 
-# n = l.search(6)
-insert = l.insert(5,2)
+# # n = l.search(6)
+# insert = l.insert(5,2)
 
-remove = l.remove(3)
+# remove = l.remove(3)
 
-print(l.size())
-print(l)
+# print(l.size())
+# print(l)
 # print(n)
